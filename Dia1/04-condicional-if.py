@@ -37,9 +37,10 @@ elif data == s:
     print("Solamente hay polo en color Morado")
 else:
     print("La talla es incorrecta")
+    
 
 #Segundo metodo que igual funciona
-elif data == l or data == m :
+if data == l or data == m :
     color = input("Indique que color de polo desea")
 elif data == s:
     print("Solamente hay polo en color Morado")
