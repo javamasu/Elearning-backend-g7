@@ -102,6 +102,7 @@ def contarElectromesticosPorAlmacen():
 
     malvinas=0
     cercado=0
+    otro=0
     for electromestico in electrodomesticos :
         if electromestico["almacen"] == "Las Malvinas" :
             malvinas +=1
@@ -116,7 +117,7 @@ def contarElectromesticosPorAlmacen():
 
 resultado=contarElectromesticosPorAlmacen()
 print("""En Las Malvinas hay {}, en Cercado hay {} y en Otros
-hay {} electrodomesticos""".foramat(resultado[0],resultado[1],resultado[2]))
+hay {} electrodomesticos""".format(resultado[0],resultado[1],resultado[2]))
 
 #si en una funcion queremos recibir un numero indeterminado en valores
 # args > arguments
@@ -129,4 +130,24 @@ def recibirAlumnos(clase,*alumnos):
     alumnos_lista = list(alumnos) # se convierte de un tipo de dato a otro SIEMPRE Y CUANDO SEA COMPATIBLE
     #alumnos_numero = int(alumnos) # esto al no ser compatible emitira un error y matara el programa
     print(clase)
+    print(alumnos_lista)
+recibirAlumnos("EDUARDO","PEPE","LUCHO")
     
+# x = (param1, param2) => {...}
+# Funcion anonima (lambda function) en python
+sumatoria = lambda numero1, numero2: numero1 + numero2
+respuesta = sumatoria(10,5)
+print(respuesta)
+
+def sumatoriaNumeros(numero1, *numeros):
+    resputa=0
+    for numero in numeros:
+        respuesta += numero
+    respuesta +=numero1
+    return respuesta
+#sumatoria = lamba numero1, *numero: numero1 + for valor in numero:
+respuesta = sumatoriaNumeros(10,5,6,7)
+print(respuesta)
+
+
+calcularIGVLambda=lambda valor : valor*1.18
